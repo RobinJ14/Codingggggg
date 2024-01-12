@@ -62,9 +62,7 @@ namespace OrderManagement
 
                     case 6:
 
-
                         getorderbyuser();
-
                         break;
 
 
@@ -136,7 +134,7 @@ namespace OrderManagement
                         res = orderProcessor.CreateOrder(user2, list2, quantity);
                         if (res)
                         {
-                            Console.WriteLine("succefully inserted");
+                            Console.WriteLine("succefully inserted\n\n");
                         };
                     }
                     else
@@ -149,6 +147,7 @@ namespace OrderManagement
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine("\n");
 
                 }
 
@@ -182,12 +181,13 @@ namespace OrderManagement
                     res = orderProcessor.CreateProduct(user1, product);
                     if (res)
                     {
-                        Console.WriteLine("succefully inserted");
+                        Console.WriteLine("succefully inserted\n\n");
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine("\n");
 
                 }
             }
@@ -205,12 +205,13 @@ namespace OrderManagement
                     res = orderProcessor.CancelOrder(userid, orderid);
                     if (res)
                     {
-                        Console.WriteLine("succefully deleted");
+                        Console.WriteLine("succefully deleted\n\n");
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine("\n");
 
                 }
 
@@ -230,6 +231,7 @@ namespace OrderManagement
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine("\n");
 
                 }
             }
@@ -241,12 +243,13 @@ namespace OrderManagement
                     List<Tuple<Product, int>> tuples = orderProcessor.GetOrderByUser();
                     foreach (Tuple<Product, int> tuple in tuples)
                     {
-                        Console.WriteLine($"Product_ID={tuple.Item1.Product_id} \tProduct Name={tuple.Item1.Product_name} \t Quantity={tuple.Item2}");
+                        Console.WriteLine($"Product_ID={tuple.Item1.Product_id} \tProduct Name={tuple.Item1.Product_name} \t Quantity={tuple.Item2}\n\n");
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    Console.WriteLine("\n");
 
                 }
             }

@@ -115,11 +115,15 @@ namespace OrderManagement.DAO
                     conn.Open();
 
                     int rowcount = cmd.ExecuteNonQuery();
+                    cmd.CommandText = "select SCOPE_IDENTITY();";
+                    object NewId = cmd.ExecuteScalar();
+                    Console.WriteLine($"your product id{NewId}");
                     if (rowcount > 0)
                     {
                         return true;
                     }
                     else { return false; }
+                    
                 }
                 else
                 {
@@ -146,11 +150,15 @@ namespace OrderManagement.DAO
                 conn.Open();
 
                 int rowcount = cmd.ExecuteNonQuery();
+                cmd.CommandText = "select SCOPE_IDENTITY();";
+                object NewId = cmd.ExecuteScalar();
+                Console.WriteLine($"your order id{NewId}");
                 if (rowcount > 0)
                 {
                     return true;
                 }
                 else { return false; }
+                
             }
             catch (Exception e)
             {
